@@ -1,11 +1,12 @@
 import InvoicesProvider from './Context/InvoicesProvider';
+import Home from './Page/Home';
 
 function App() {
   return (
-    <InvoicesProvider >
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+    <InvoicesProvider>
+      <Home />
     </InvoicesProvider>
-  )
+  );
 }
 
 export default App;
