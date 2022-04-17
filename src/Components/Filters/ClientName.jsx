@@ -9,16 +9,12 @@ function ClientName() {
     setClientName(value);
   };
   return (
-    <div>
-      <TextField
-        id="outlined-required"
-        label="Client name"
-        sx={{ width: 300 }}
-        defaultValue={clientName}
-        onChange={handleChange}
-        margin="dense"
-      />
-    </div>
+    <TextField
+      id="outlined-required"
+      label="Client name"
+      defaultValue={clientName}
+      onChange={handleChange}
+    />
   );
 }
 

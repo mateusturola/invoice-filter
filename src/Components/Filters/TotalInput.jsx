@@ -9,15 +9,11 @@ function TotalInput() {
     setTotalInput(value);
   };
   return (
-    <div>
-      <TextField
-        label="Total without VAT"
-        defaultValue={totalInput}
-        onChange={handleChange}
-        sx={{ width: 300 }}
-        margin="dense"
-      />
-    </div>
+    <TextField
+      label="Total without VAT"
+      defaultValue={totalInput}
+      onChange={handleChange}
+    />
   );
 }
 

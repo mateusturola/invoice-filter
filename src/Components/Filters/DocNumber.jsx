@@ -9,16 +9,12 @@ function DocNumber() {
     setDocNumber(value);
   };
   return (
-    <div>
-      <TextField
-        label="Document Number"
-        defaultValue={docNumber}
-        onChange={handleChange}
-        sx={{ width: 300 }}
-        margin="dense"
-        name="Document Number"
-      />
-    </div>
+    <TextField
+      label="Document Number"
+      defaultValue={docNumber}
+      onChange={handleChange}
+      name="Document Number"
+    />
   );
 }
 

@@ -11,23 +11,16 @@ function DocType() {
     setDocType(newValue);
   };
   return (
-    <div>
-      <Autocomplete
-        options={type}
-        sx={{ width: 300 }}
-        inputValue={docType}
-        renderInput={(param) => (
-          <TextField
-            {...param}
-            label="Document type"
-            margin="dense"
-            name="Document type"
-          />
-        )}
-        onChange={handleChange}
-        onInputChange={handleChange}
-      />
-    </div>
+    <Autocomplete
+      options={type}
+      value={docType == null ? '' : docType}
+      inputValue={docType == null ? '' : docType}
+      renderInput={(param) => (
+        <TextField {...param} label="Document type" name="Document type" />
+      )}
+      onChange={handleChange}
+      onInputChange={handleChange}
+    />
   );
 }
 

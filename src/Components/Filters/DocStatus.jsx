@@ -11,18 +11,14 @@ function DocStatus() {
     setDocStatus(newValue);
   };
   return (
-    <div>
-      <Autocomplete
-        options={status}
-        sx={{ width: 300 }}
-        inputValue={docStatus}
-        renderInput={(param) => (
-          <TextField {...param} label="Document status" margin="dense" />
-        )}
-        onChange={handleChange}
-        onInputChange={handleChange}
-      />
-    </div>
+    <Autocomplete
+      options={status}
+      inputValue={docStatus == null ? '' : docStatus}
+      value={docStatus == null ? '' : docStatus}
+      renderInput={(param) => <TextField {...param} label="Document status" />}
+      onChange={handleChange}
+      onInputChange={handleChange}
+    />
   );
 }
 

@@ -19,8 +19,7 @@ export default function DocDate() {
         inputFormat="dd/MM/yyyy"
         value={docDate}
         onChange={handleChange}
-        renderInput={(params) => <TextField {...params} margin="dense" />}
-        margin="dense"
+        renderInput={(params) => <TextField {...params} />}
       />
     </LocalizationProvider>
   );

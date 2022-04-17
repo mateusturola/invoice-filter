@@ -8,7 +8,7 @@ import TotalInput from './TotalInput';
 
 function Filters() {
   return (
-    <div>
+    <div className="filter-inputs">
       <DocNumber />
       <ClientName />
       <DocStatus />
