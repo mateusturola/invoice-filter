@@ -16,4 +16,52 @@ header div {
 header span {
   color: #444444;
 }
+
+.card-invoice {
+  @apply flex flex-col bg-gray-100 rounded-xl;
+}
+
+.card-invoice ul {
+  @apply p-4;
+}
+
+.card-invoice ul span {
+  @apply p-1 mt-1 font-semibold text-slate-900;
+}
+
+.card-invoice div {
+  background: #e5e5e5 !important;
+  @apply p-4 flex justify-between items-center;
+}
+
+.card-invoice div h2 {
+  @apply text-xl font-semibold text-slate-900 rounded-t-md;
+}
+
+.card-invoice h3 {
+  background: #e5e5e5 !important;
+  @apply p-4  text-sm font-semibold text-slate-900 rounded-b-md;
+}
+
+.invoices {
+  @apply p-4 grid grid-cols-5 gap-4 text-sm leading-6;
+}
+
+@media screen and (max-width: 1700px) {
+  .invoices {
+    @apply grid-cols-3;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .invoices {
+    @apply grid-cols-2;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .invoices {
+    @apply grid-cols-1;
+  }
+}
 /*# sourceMappingURL=index.css.map */

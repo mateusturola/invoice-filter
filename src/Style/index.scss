@@ -8,7 +8,7 @@
 
 header {
   background: #e5e5e5 !important;
-
+  
   div {
     color: #00bb80;
   }
@@ -16,3 +16,44 @@ header {
     color: #444444;
   }
 }
+
+.card-invoice {
+  @apply flex flex-col bg-gray-100 rounded-xl;
+
+  ul {
+    @apply p-4;
+ 
+    span {
+      @apply p-1 mt-1 font-semibold text-slate-900;
+    }
+  }
+
+  div {
+    background: #e5e5e5 !important;
+    @apply p-4 flex justify-between items-center;
+
+    h2 {
+      @apply text-xl font-semibold text-slate-900 rounded-t-md;
+    }
+  }
+
+  h3 {
+    background: #e5e5e5 !important;
+    @apply p-4  text-sm font-semibold text-slate-900 rounded-b-md;
+  }
+}
+
+.invoices {
+  @apply  p-4 grid grid-cols-5 gap-4 text-sm leading-6;
+  @media screen and (max-width: 1700px) {
+    @apply  grid-cols-3;
+  }
+  @media screen and (max-width: 1200px) {
+    @apply  grid-cols-2;
+  }
+  @media screen and (max-width: 950px) {
+    @apply  grid-cols-1;
+  }
+ 
+    
+  }
