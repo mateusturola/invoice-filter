@@ -11,7 +11,7 @@
     {
       "status": "Draft",
       "type": "Invoice-Receipt",
-      "number": "Draft",
+      "number": "2019/30",
       "client_name": "Rick Sanchez",
       "date": "2019-02-01",
       "total_w_vat": 13.11
