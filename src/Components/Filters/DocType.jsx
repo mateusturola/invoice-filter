@@ -20,6 +20,7 @@ function DocType() {
       )}
       onChange={handleChange}
       onInputChange={handleChange}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
     />
   );
 }

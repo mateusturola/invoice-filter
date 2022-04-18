@@ -18,6 +18,7 @@ function DocStatus() {
       renderInput={(param) => <TextField {...param} label="Document status" />}
       onChange={handleChange}
       onInputChange={handleChange}
+      isOptionEqualToValue={(option, value) => option.value === value.value}
     />
   );
 }

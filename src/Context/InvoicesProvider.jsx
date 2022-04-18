@@ -11,6 +11,10 @@ function InvoicesProvider({ children }) {
   const [docDate, setDocDate] = useState(null);
   const [totalInput, setTotalInput] = useState('');
 
+  const [invoices, setInvoices] = useState([]);
+
+  const [itensPerPage, setItensPerPage] = useState(7);
+
   const contextValue = {
     docNumber,
     setDocNumber,
@@ -24,6 +28,10 @@ function InvoicesProvider({ children }) {
     setDocDate,
     totalInput,
     setTotalInput,
+    invoices,
+    setInvoices,
+    itensPerPage,
+    setItensPerPage,
   };
 
   return (

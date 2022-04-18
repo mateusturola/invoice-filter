@@ -16,7 +16,8 @@ export default function DocDate() {
     <LocalizationProvider dateAdapter={AdapterDateFns}>
       <DatePicker
         label="Date"
-        inputFormat="dd/MM/yyyy"
+        inputFormat="yyyy-MM-dd"
+        views={['year', 'month', 'day']}
         value={docDate}
         onChange={handleChange}
         renderInput={(params) => <TextField {...params} />}
