@@ -64,4 +64,8 @@ header span {
     @apply grid-cols-1;
   }
 }
+
+.MuiButtonGroup-root {
+  margin: auto;
+}
 /*# sourceMappingURL=index.css.map */
