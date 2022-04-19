@@ -1,16 +1,10 @@
+/* eslint-disable object-curly-newline */
 import React from 'react';
 import Chip from '@mui/material/Chip';
 import PropTypes from 'prop-types';
 
 function CardInvoices({ invoice }) {
-  const {
-    client_name: clientName,
-    date,
-    number,
-    status,
-    total_w_vat: total,
-    type,
-  } = invoice;
+  const { clientName, date, number, status, totalWVat, type } = invoice;
 
   return (
     <div className="card-invoice">
@@ -34,7 +28,7 @@ function CardInvoices({ invoice }) {
       </ul>
       <h3>
         <span>Total without VAT: </span>
-        {total}
+        {totalWVat}
       </h3>
     </div>
   );
@@ -42,11 +36,11 @@ function CardInvoices({ invoice }) {
 
 CardInvoices.propTypes = {
   invoice: PropTypes.shape({
-    client_name: PropTypes.string.isRequired,
+    clientName: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     number: PropTypes.string.isRequired,
     status: PropTypes.string.isRequired,
-    total_w_vat: PropTypes.number.isRequired,
+    totalWVat: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
   }).isRequired,
 };
