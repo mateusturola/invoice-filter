@@ -1,4 +1,5 @@
 import React from 'react';
+import ButtonsFilter from './ButtonsFilter';
 import ClientName from './ClientName';
 import DocDate from './DocDate';
 import DocNumber from './DocNumber';
@@ -15,6 +16,7 @@ function Filters() {
       <DocType />
       <DocDate />
       <TotalInput />
+      <ButtonsFilter />
     </div>
   );
 }

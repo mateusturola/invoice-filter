@@ -8,10 +8,11 @@ function DocNumber() {
   const handleChange = ({ target: { value } }) => {
     setDocNumber(value);
   };
+
   return (
     <TextField
       label="Document Number"
-      defaultValue={docNumber}
+      value={docNumber}
       onChange={handleChange}
       name="Document Number"
     />

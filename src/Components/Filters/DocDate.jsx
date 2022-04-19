@@ -17,6 +17,7 @@ export default function DocDate() {
       <DatePicker
         label="Date"
         inputFormat="yyyy-MM-dd"
+        mask="____-__-__"
         views={['year', 'month', 'day']}
         value={docDate}
         onChange={handleChange}

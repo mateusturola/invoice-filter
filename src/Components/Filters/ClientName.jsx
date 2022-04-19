@@ -8,11 +8,12 @@ function ClientName() {
   const handleChange = ({ target: { value } }) => {
     setClientName(value);
   };
+
   return (
     <TextField
       id="outlined-required"
       label="Client name"
-      defaultValue={clientName}
+      value={clientName}
       onChange={handleChange}
     />
   );
