@@ -1,6 +1,9 @@
+/* eslint-disable array-callback-return */
 /* eslint-disable react/jsx-no-constructed-context-values */
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import filterData from '../Utils/filterItems';
+import getInvoices from '../Utils/getInvoices';
 import InvoicesContext from './InvoicesContext';
 
 function InvoicesProvider({ children }) {
@@ -12,8 +15,45 @@ function InvoicesProvider({ children }) {
   const [totalInput, setTotalInput] = useState('');
 
   const [invoices, setInvoices] = useState([]);
+  const [invoicesFiltered, setInvoicesFiltered] = useState([]);
 
   const [itensPerPage, setItensPerPage] = useState(7);
+  const [buttonGo, setButtonGo] = useState(false);
+  const [buttonClear, setButtonClear] = useState(false);
+
+  useEffect(() => {
+    setInvoices(getInvoices());
+  }, []);
+
+  useEffect(() => {
+    setInvoicesFiltered(invoices);
+  }, [invoices]);
+
+  useEffect(() => {
+    setInvoicesFiltered(invoices);
+    setDocNumber('');
+    setClientName('');
+    setDocStatus('');
+    setDocType('');
+    setDocDate(null);
+    setTotalInput('');
+  }, [buttonClear]);
+
+  useEffect(() => {
+    const data = invoices;
+    const dataFilter = {
+      docNumber,
+      clientName,
+      docStatus,
+      docType,
+      docDate,
+      totalInput,
+    };
+
+    const filter = filterData({ data, dataFilter });
+
+    setInvoicesFiltered(filter);
+  }, [buttonGo]);
 
   const contextValue = {
     docNumber,
@@ -32,6 +72,12 @@ function InvoicesProvider({ children }) {
     setInvoices,
     itensPerPage,
     setItensPerPage,
+    invoicesFiltered,
+    setInvoicesFiltered,
+    buttonGo,
+    setButtonGo,
+    buttonClear,
+    setButtonClear,
   };
 
   return (

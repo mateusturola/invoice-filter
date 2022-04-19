@@ -1,22 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Pagination from '@mui/material/Pagination';
 import InvoicesContext from '../../Context/InvoicesContext';
-import getInvoices from '../../Utils/getInvoices';
 import CardInvoices from './CardInvoices';
 import ItemsPerPage from './ItemsPerPage';
 
 function Cards() {
-  const { invoices, setInvoices, itensPerPage } = useContext(InvoicesContext);
+  const { invoicesFiltered, itensPerPage } = useContext(InvoicesContext);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const NumberPages = Math.ceil(invoices.length / itensPerPage);
+  const NumberPages = Math.ceil(invoicesFiltered.length / itensPerPage);
   const startIndex = (currentPage - 1) * itensPerPage;
   const endIndex = startIndex + itensPerPage;
-  const currentInvoices = invoices.slice(startIndex, endIndex);
-
-  useEffect(() => {
-    setInvoices(getInvoices());
-  }, []);
+  const currentInvoices = invoicesFiltered.slice(startIndex, endIndex);
 
   const handleChange = (_event, value) => {
     setCurrentPage(value);
